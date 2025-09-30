@@ -16,41 +16,41 @@ def MathBox():
     a = 0
 
     match cube:
-        case :
-            a = 1
-        case :
+        case 'E2801190A503006242D77787':
+           a = 1
+        case 'E2801190A503006242D77797':
             a = 2
-        case :
+        case 'E2801190A503006242D75217':
             a = 3
-        case :
+        case 'E2801190A503006242D75227':
             a = 4
-        case :
+        case 'E2801190A503006242D75237':
             a = 5
-        case :
+        case 'E2801190A503006242D75247':
             a = 6
-        case :
+        case 'E2801190A503006242D75257':
             a = 7
-        case :
+        case 'E2801190A503006242D75267':
             a = 8
-        case :
+        case 'E2801190A503006242D75287':
             a = 9
-        case :
+        case 'E2801190A503006242D75297':
             a = -1
-        case :
+        case 'E2801190A503006242D752A7':
             a = -2
-        case :
+        case 'E2801190A503006242D752B7':
             a = -3
-        case :
+        case 'E2801190A503006242D77767':
             a = -4
-        case :
+        case 'E2801190A503006242D77757 ':
             a = -5
-        case :
+        case 'E2801190A503006242D77747':
             a = -6
-        case :
+        case 'E2801190A503006242D77727':
             a = -7
-        case :
+        case 'E2801190A503006242D77737':
             a = -8
-        case :
+        case 'E2801190A503006242D77717':
             a = -9
 
     MathBox = [] #Lista dos cubos dentro da caixa
@@ -69,3 +69,5 @@ def MathBox():
 
 Port = serial.Serial(,)
 Port.write(MathBox)
+ 
+
