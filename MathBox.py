@@ -53,6 +53,8 @@ def MathBox():
             a = -8
         case 'E2801190A503006242D77717':
             a = -9
+        case _:
+            print("valor inválido")
 
     MathBox.append(a) #Adiciona valores escolhidos à lista da caixa
     print(a)
@@ -97,6 +99,8 @@ def MathBox():
             b = -8
         case 'E2801190A503006242D77717':
             b = -9
+        case _:
+            print("valor inválido")
             
     MathBox.append(b) #Adiciona valores escolhidos à lista da caixa
     print(b)
@@ -141,7 +145,9 @@ def MathBox():
             c = -8
         case 'E2801190A503006242D77717':
             c = -9
-            
+        case _:
+            print("valor inválido")
+
     MathBox.append(c) #Adiciona valores escolhidos à lista da caixa
     print(c)
 
