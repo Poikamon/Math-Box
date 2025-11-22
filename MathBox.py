@@ -3,6 +3,8 @@ import RPi.GPIO as GPIO
 import random
 import time
 
+import time
+
 #Função
 
 def MathBox():
@@ -10,9 +12,14 @@ def MathBox():
     player = 0
     exvalue = random.randint(-27,27) #Pega um valor possível para a caixa
     print(exvalue)
+    exvalue = random.randint(-27,27) #Pega um valor possível para a caixa
+    print(exvalue)
 
     MathBox = [] #Lista dos cubos dentro da caixa
+    MathBox = [] #Lista dos cubos dentro da caixa
 
+    cube1 = input(' numero:')
+    a = 0
     cube1 = input(' numero:')
     a = 0
 
@@ -61,6 +68,8 @@ def MathBox():
 
     cube2 = input(' numero:')
     b = 0
+    cube2 = input(' numero:')
+    b = 0
 
     match cube2:
         case 'E2801190A503006242D77787':
@@ -105,6 +114,8 @@ def MathBox():
 
     cube3 = input(' numero:')
     c = 0
+    cube3 = input(' numero:')
+    c = 0
 
     match cube3:
         case 'E2801190A503006242D77787':
@@ -147,6 +158,7 @@ def MathBox():
     MathBox.append(c) #Adiciona valores escolhidos à lista da caixa
     print(c)
 
+    value = sum(MathBox) #soma os valores da caixa
     value = sum(MathBox) #soma os valores da caixa
 
     if value == exvalue:
