@@ -1,0 +1,41 @@
+
+.titulo-principal {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #31333f;
+  background: #b0d8ff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.bloco-valor {
+  text-align: center;
+  font-size: 80px;
+  font-weight: 900;
+  color: #222;
+  margin-top: 40px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 95px;
+  margin-top: 40px;
+  left: 50%;
+  font-weight: 900;
+}
+
+.correto {
+  text-align: center;
+  font-size: 50px;
+  color: green;
+  margin-top: 30px;
+}
+
+.errado {
+  text-align: center;
+  font-size: 50px;
+  color: red;
+  margin-top: 30px;
+}
