@@ -1,5 +1,6 @@
 #Import
 
+import RPi.GPIO as GPIO
 import streamlit as st
 import random
 import time
@@ -173,56 +174,38 @@ def MathBox():
 
     if value == exvalue:
         placeholder.markdown("<div class='correto'>Resposta correta :)</div>", unsafe_allow_html=True)
-        player += 1
     else:
         placeholder.markdown("<div class='errado'>Resposta incorreta :(</div>", unsafe_allow_html=True)
 
 #Código principal
+x = True
+while x == True:
+    placeholder.markdown(
+        """
+        <h1 class='titulo-principal'>
+            Aperte o botão e teste sua habilidade matemática!
+        </h1>
+        """,
+        unsafe_allow_html=True
+    )
 
-placeholder.markdown(
-    """
-    <h1 class='titulo-principal'>
-        Aperte o botão e teste sua habilidade matemática!
-    </h1>
-    """,
-    unsafe_allow_html=True
-)
-
-op = input()
-
-if op == 's':
-    timer = time.time() + 100 #1 minuto :3
-
-    while time.time() < timer:
-        MathBox()
-        time.sleep(2)
-    print('acabou o tempo!')
-    player = 0
-# O código abaixo é para rodar no Raspberry Pi com o botão físico
+    # O código abaixo é para rodar no Raspberry Pi com o botão físico
         
-#Código principal
-        # Configurar a numeração dos pinos
-#GPIO.setmode(GPIO.BCM)
-#GPIO.setwarnings(False)
+    #Código principal
+            # Configurar a numeração dos pinos
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
 
-# Definir o número do pino do botão
-#botao_pin = 3
-# Configurar o pino do botão como entrada com pull-up interno (o botão é conectado entre o pino e o terra)
-#GPIO.setup(botao_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    # Definir o número do pino do botão
+    botao_pin = 3
+    # Configurar o pino do botão como entrada com pull-up interno (o botão é conectado entre o pino e o terra)
+    GPIO.setup(botao_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-#timer = time.time() + 120
+    timer = time.time() + 60
 
-#try:
-    #while True:
-        # Ler o estado do botão
-        # Se o botão estiver pressionado, a leitura será baixa (LOW)
-        #if GPIO.input(botao_pin) == GPIO.LOW:
-            #while time.time()<timer:
-                #MathBox()
-#except KeyboardInterrupt:
-    #print("Programa encerrado.")
-#finally:
-    #GPIO.cleanup()
-
-
-
+            # Ler o estado do botão
+            # Se o botão estiver pressionado, a leitura será baixa (LOW)
+    if GPIO.input(botao_pin) == GPIO.LOW:
+        while time.time()<timer:
+            MathBox()
+            time.sleep(2)
